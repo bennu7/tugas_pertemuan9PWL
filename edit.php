@@ -21,52 +21,49 @@ include 'controller_ubah.php';
 // }
 
 
-
-// percobaan
-// $result = mysqli_query($con, "SELECT * FROM tb_biodata where id=$id");
 $id = $_GET["id"];
 $result = mysqli_query($con, "SELECT * FROM tb_biodata where id=$id");
 $resultBio = mysqli_fetch_assoc($result);
 
 
-// if (!isset($_POST['submit'])) {
-//     $nama = $_POST["txtNama"];
-//     $alamat = $_POST["txtAlamat"];
+if (isset($_POST['submit'])) {
+    $nama = $_POST["txtNama"];
+    $alamat = $_POST["txtAlamat"];
 
-//     $sql = "UPDATE tb_biodata SET 
-//         nama='$nama',
-//         alamat='$alamat'
-//         WHERE id = $id
-//         ";
+    $sql = "UPDATE tb_biodata SET 
+        nama='$nama',
+        alamat='$alamat'
+        WHERE id = $id
+        ";
 
-//     mysqli_query($con, $sql);
-//     // $row = mysqli_affected_rows($con);
-// }
+    mysqli_query($con, $sql);
+    header("Location: index.php");
+}
 
 // var_dump($fetch);
 // die;
 
 //update
 
-// TODO: masih belum fix
-$nama = $_POST["txtNama"];
-$alamat = $_POST["txtAlamat"];
+// // TODO: masih belum fix
+// $nama = $_POST["txtNama"];
+// $alamat = $_POST["txtAlamat"];
 
-$sql = "UPDATE tb_biodata SET 
-        nama='$nama',
-        alamat='$alamat'
-        WHERE id = $id
-        ";
+// $sql = "UPDATE tb_biodata SET 
+//         nama='$nama',
+//         alamat='$alamat'
+//         WHERE id = $id
+//         ";
 
-mysqli_query($con, $sql);
+// mysqli_query($con, $sql);
 
-$row = mysqli_affected_rows($con);
+// $row = mysqli_affected_rows($con);
 
-if ($row > 0) {
-    header("Location: index.php");
-} else {
-    print("gagal edit data");
-}
+// if ($row > 0) {
+//     header("Location: index.php");
+// } else {
+//     print("gagal edit data");
+// }
 
 ?>
 
@@ -118,7 +115,7 @@ if ($row > 0) {
                                         </div>
                                         <div class="col-12 d-flex justify-content-end">
                                             <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
-                                            <button type="submit" class="btn btn-primary me-1 mb-1">Ubah</button>
+                                            <button type="submit" name="submit" class="btn btn-primary me-1 mb-1">Ubah</button>
 
                                         </div>
                                     </div>
