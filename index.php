@@ -53,7 +53,7 @@
                                                         </a>
 
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                            <a class="dropdown-item" href="#">Detail</a>
+                                                            <a class="dropdown-item" href="detail.php?id=<?= $data['id']; ?>">Detail</a>
                                                             <a class="dropdown-item" href="edit.php?id=<?= $data['id']; ?>">Edit</a>
                                                             <a class="dropdown-item" href="controller_hapus.php?id=<?= $data['id']; ?>" onclick="return confirm('yakin menghapus?')">Hapus</a>
                                                         </div>
