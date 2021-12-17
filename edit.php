@@ -1,24 +1,5 @@
 <?php
 require 'env.php';
-include 'controller_ubah.php';
-
-// $id = $_GET["id"];
-// $resultBio = query("SELECT * FROM tb_biodata where id=$id")[0];
-
-
-// dijadikan wadah array asosiativ
-// function query($sql)
-// {
-//     // mengambil tiap query/value dari array asosiativ
-//     global $con;
-//     $result = mysqli_query($con, $sql);
-//     $rows = []; //sebagai wadah kosong
-//     while ($row = mysqli_fetch_assoc($result)) {
-//         $rows[] = $row; //disimpah ke wadah kosong baru
-//     }
-
-//     return $rows; //kembalikan wadahnya
-// }
 
 
 $id = $_GET["id"];
@@ -39,31 +20,6 @@ if (isset($_POST['submit'])) {
     mysqli_query($con, $sql);
     header("Location: index.php");
 }
-
-// var_dump($fetch);
-// die;
-
-//update
-
-// // TODO: masih belum fix
-// $nama = $_POST["txtNama"];
-// $alamat = $_POST["txtAlamat"];
-
-// $sql = "UPDATE tb_biodata SET 
-//         nama='$nama',
-//         alamat='$alamat'
-//         WHERE id = $id
-//         ";
-
-// mysqli_query($con, $sql);
-
-// $row = mysqli_affected_rows($con);
-
-// if ($row > 0) {
-//     header("Location: index.php");
-// } else {
-//     print("gagal edit data");
-// }
 
 ?>
 
@@ -115,7 +71,7 @@ if (isset($_POST['submit'])) {
                                         </div>
                                         <div class="col-12 d-flex justify-content-end">
                                             <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
-                                            <button type="submit" name="submit" class="btn btn-primary me-1 mb-1">Ubah</button>
+                                            <button type="submit" name="submit" class="btn btn-primary me-1 mb-1">Edit</button>
 
                                         </div>
                                     </div>
